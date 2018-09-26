@@ -20,8 +20,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.WorkingDays.CultureStrategies
@@ -32,16 +30,16 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
     {
         public FR_CAHolidayStrategy()
         {
-            this.InnerHolidays.Add(GlobalHolidays.NewYear);
-            this.InnerHolidays.Add(ChristianHolidays.GoodFriday);
-            this.InnerHolidays.Add(ChristianHolidays.EasterMonday);
+            InnerHolidays.Add(GlobalHolidays.NewYear);
+            InnerHolidays.Add(ChristianHolidays.GoodFriday);
+            InnerHolidays.Add(ChristianHolidays.EasterMonday);
             //Victoria Day is not really national
             //this.InnerHolidays.Add(VictoriaDay);
-            this.InnerHolidays.Add(CanadaDay);
-            this.InnerHolidays.Add(LabourDay);
-            this.InnerHolidays.Add(Thanksgiving);
-            this.InnerHolidays.Add(RemembranceDay);
-            this.InnerHolidays.Add(ChristianHolidays.Christmas);
+            InnerHolidays.Add(CanadaDay);
+            InnerHolidays.Add(LabourDay);
+            InnerHolidays.Add(Thanksgiving);
+            InnerHolidays.Add(RemembranceDay);
+            InnerHolidays.Add(ChristianHolidays.Christmas);
             //Boxing is not really national
             //this.InnerHolidays.Add(GlobalHolidays.BoxingDay);
         }

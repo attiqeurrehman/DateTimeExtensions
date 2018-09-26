@@ -9,20 +9,20 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
     {
         public SloveniaHolidaysStrategy()
         {
-            this.InnerHolidays.Add(GlobalHolidays.NewYear);
-            this.InnerHolidays.Add(PreserenDay);
-            this.InnerHolidays.Add(ChristianHolidays.Easter);
-            this.InnerHolidays.Add(ChristianHolidays.EasterMonday);
-            this.InnerHolidays.Add(DayOfUprisingAgainstOccupation);
+            InnerHolidays.Add(GlobalHolidays.NewYear);
+            InnerHolidays.Add(PreserenDay);
+            InnerHolidays.Add(ChristianHolidays.Easter);
+            InnerHolidays.Add(ChristianHolidays.EasterMonday);
+            InnerHolidays.Add(DayOfUprisingAgainstOccupation);
             //May Day occours both in 1st May and 2nd May
-            this.InnerHolidays.Add(GlobalHolidays.MayDay);
-            this.InnerHolidays.Add(ChristianHolidays.Pentecost);
-            this.InnerHolidays.Add(StatehoodDay);
-            this.InnerHolidays.Add(ChristianHolidays.Assumption);
-            this.InnerHolidays.Add(ReformationDay);
-            this.InnerHolidays.Add(ChristianHolidays.AllSaints);
-            this.InnerHolidays.Add(ChristianHolidays.Christmas);
-            this.InnerHolidays.Add(IndependenceAndUnityDay);
+            InnerHolidays.Add(GlobalHolidays.MayDay);
+            InnerHolidays.Add(ChristianHolidays.Pentecost);
+            InnerHolidays.Add(StatehoodDay);
+            InnerHolidays.Add(ChristianHolidays.Assumption);
+            InnerHolidays.Add(ReformationDay);
+            InnerHolidays.Add(ChristianHolidays.AllSaints);
+            InnerHolidays.Add(ChristianHolidays.Christmas);
+            InnerHolidays.Add(IndependenceAndUnityDay);
         }
 
         protected override IDictionary<DateTime, Holiday> BuildObservancesMap(int year)
@@ -52,45 +52,24 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
 
         private static Holiday preserenDay;
 
-        public static Holiday PreserenDay
-        {
-            get { return preserenDay ?? (preserenDay = new FixedHoliday("Prešeren Day", 2, 8)); }
-        }
+        public static Holiday PreserenDay => preserenDay ?? (preserenDay = new FixedHoliday("Prešeren Day", 2, 8));
 
         private static Holiday dayOfUprisingAgainstOccupation;
 
-        public static Holiday DayOfUprisingAgainstOccupation
-        {
-            get
-            {
-                return dayOfUprisingAgainstOccupation ??
-                       (dayOfUprisingAgainstOccupation = new FixedHoliday("Day of Uprising Against Occupation", 4, 27));
-            }
-        }
+        public static Holiday DayOfUprisingAgainstOccupation => dayOfUprisingAgainstOccupation ??
+                                                                (dayOfUprisingAgainstOccupation = new FixedHoliday("Day of Uprising Against Occupation", 4, 27));
 
         private static Holiday statehoodDay;
 
-        public static Holiday StatehoodDay
-        {
-            get { return statehoodDay ?? (statehoodDay = new FixedHoliday("Statehood Day", 6, 25)); }
-        }
+        public static Holiday StatehoodDay => statehoodDay ?? (statehoodDay = new FixedHoliday("Statehood Day", 6, 25));
 
         private static Holiday reformationDay;
 
-        public static Holiday ReformationDay
-        {
-            get { return reformationDay ?? (reformationDay = new FixedHoliday("Reformation Day", 10, 31)); }
-        }
+        public static Holiday ReformationDay => reformationDay ?? (reformationDay = new FixedHoliday("Reformation Day", 10, 31));
 
         private static Holiday independenceAndUnityDay;
 
-        public static Holiday IndependenceAndUnityDay
-        {
-            get
-            {
-                return independenceAndUnityDay ??
-                       (independenceAndUnityDay = new FixedHoliday("Independence and Unity Day", 12, 26));
-            }
-        }
+        public static Holiday IndependenceAndUnityDay => independenceAndUnityDay ??
+                                                         (independenceAndUnityDay = new FixedHoliday("Independence and Unity Day", 12, 26));
     }
 }

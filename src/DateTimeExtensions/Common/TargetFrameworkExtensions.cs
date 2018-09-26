@@ -11,7 +11,18 @@ namespace DateTimeExtensions.Common
         {
             return type;
         }
+
+        
 #endif
+
+        public static IEnumerable<ConstructorInfo> GetDeclaredConstructors(this Type type)
+        {
+#if NET35
+            return type.GetConstructors();
+#else
+            return type.GetTypeInfo().DeclaredConstructors;
+#endif
+        }
 
         internal static IEnumerable<Type> GetAssemblyTypes(this Assembly assembly)
         {

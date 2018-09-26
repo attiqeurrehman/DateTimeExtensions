@@ -1,5 +1,4 @@
 ﻿using System.Globalization;
-using DateTimeExtensions.WorkingDays;
 using DateTimeExtensions.WorkingDays.CultureStrategies;
 using NUnit.Framework;
 

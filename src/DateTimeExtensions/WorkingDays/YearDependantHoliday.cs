@@ -19,9 +19,6 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DateTimeExtensions.WorkingDays
 {
@@ -38,12 +35,12 @@ namespace DateTimeExtensions.WorkingDays
 
         public override DateTime? GetInstance(int year)
         {
-            return this.yearCondition(year) ? this.baseHoliday.GetInstance(year) : null;
+            return yearCondition(year) ? baseHoliday.GetInstance(year) : null;
         }
 
         public override bool IsInstanceOf(DateTime date)
         {
-            return this.yearCondition(date.Year) && this.baseHoliday.IsInstanceOf(date);
+            return yearCondition(date.Year) && baseHoliday.IsInstanceOf(date);
         }
     }
 }

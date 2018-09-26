@@ -43,10 +43,10 @@ namespace DateTimeExtensions.Common
                 return default(T);
             }
 
-            string[] parameters = null;
-            if(implementationType.GetTypeInfo().DeclaredConstructors.Any(x => x.IsPublic && x.GetParameters().Count() > 0))
+            object[] parameters = null;
+            if(implementationType.GetDeclaredConstructors().Any(x => x.IsPublic && x.GetParameters().Any()))
             {
-                parameters = new []{ region };
+                parameters = new object[]{ region };
             }
 
             var instance = (T) Activator.CreateInstance(implementationType, parameters);

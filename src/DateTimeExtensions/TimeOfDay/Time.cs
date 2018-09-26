@@ -21,7 +21,6 @@
 using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
-using System.Threading;
 
 namespace DateTimeExtensions.TimeOfDay
 {
@@ -33,31 +32,19 @@ namespace DateTimeExtensions.TimeOfDay
 
         private string formatString;
 
-        public string FormatString
-        {
-            get { return this.formatString; }
-        }
+        public string FormatString => formatString;
 
         private int hour;
 
-        public int Hour
-        {
-            get { return this.hour; }
-        }
+        public int Hour => hour;
 
         private int minute;
 
-        public int Minute
-        {
-            get { return this.minute; }
-        }
+        public int Minute => minute;
 
         private int second;
 
-        public int Second
-        {
-            get { return this.second; }
-        }
+        public int Second => second;
 
         public Time(int hour = 0, int minute = 0, int second = 0, string formatString = "")
         {
@@ -108,21 +95,21 @@ namespace DateTimeExtensions.TimeOfDay
         public int CompareTo(Time other)
         {
             //Compare Hours
-            var hoursDiff = this.Hour.CompareTo(other.Hour);
+            var hoursDiff = Hour.CompareTo(other.Hour);
             if (hoursDiff != 0)
             {
                 return hoursDiff;
             }
 
             //Hours are the same, so compare minutes
-            var minutesDiff = this.Minute.CompareTo(other.Minute);
+            var minutesDiff = Minute.CompareTo(other.Minute);
             if (minutesDiff != 0)
             {
                 return minutesDiff;
             }
 
             //minutes are the same so compare seconds
-            var secondsDiff = this.Second.CompareTo(other.Second);
+            var secondsDiff = Second.CompareTo(other.Second);
             if (secondsDiff != 0)
             {
                 return secondsDiff;

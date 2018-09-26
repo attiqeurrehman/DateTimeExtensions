@@ -35,64 +35,46 @@ namespace DateTimeExtensions.NaturalText.CultureStrategies
 
         private const string PluralMonthText = "maanden";
 
-        protected override string YearText
-        {
-            get { return "jaar"; }
-        }
+        protected override string YearText => "jaar";
 
-        protected override string MonthText
-        {
-            get { return "maand"; }
-        }
+        protected override string MonthText => "maand";
 
-        protected override string DayText
-        {
-            get { return "dag"; }
-        }
+        protected override string DayText => "dag";
 
-        protected override string HourText
-        {
-            get { return "uur"; }
-        }
+        protected override string HourText => "uur";
 
-        protected override string MinuteText
-        {
-            get { return "minuut"; }
-        }
+        protected override string MinuteText => "minuut";
 
-        protected override string SecondText
-        {
-            get { return "seconde"; }
-        }
+        protected override string SecondText => "seconde";
 
         protected override string GetYearsText(int value)
         {
-            return string.Format("{0} {1}", value, this.YearText);
+            return string.Format("{0} {1}", value, YearText);
         }
 
         protected override string GetMonthsText(int value)
         {
-            return string.Format("{0} {1}", value, value == 1 ? this.MonthText : PluralMonthText);
+            return string.Format("{0} {1}", value, value == 1 ? MonthText : PluralMonthText);
         }
 
         protected override string GetDaysText(int value)
         {
-            return string.Format("{0} {1}", value, value == 1 ? this.DayText : PluralDayText);
+            return string.Format("{0} {1}", value, value == 1 ? DayText : PluralDayText);
         }
 
         protected override string GetHoursText(int value)
         {
-            return string.Format("{0} {1}", value, this.HourText);
+            return string.Format("{0} {1}", value, HourText);
         }
 
         protected override string GetMinutesText(int value)
         {
-            return string.Format("{0} {1}", value, value == 1 ? this.MinuteText : PluralMinuteText);
+            return string.Format("{0} {1}", value, value == 1 ? MinuteText : PluralMinuteText);
         }
 
         protected override string GetSecondsText(int value)
         {
-            return string.Format("{0} {1}", value, value == 1 ? this.SecondText : PluralSecondText);
+            return string.Format("{0} {1}", value, value == 1 ? SecondText : PluralSecondText);
         }
 
 

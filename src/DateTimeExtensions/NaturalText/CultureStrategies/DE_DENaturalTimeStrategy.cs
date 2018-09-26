@@ -25,35 +25,17 @@ namespace DateTimeExtensions.NaturalText.CultureStrategies
     [Locale("de-DE")]
     public class DE_DENaturalTimeStrategy : NaturalTimeStrategyBase
     {
-        protected override string YearText
-        {
-            get { return "Jahr"; }
-        }
+        protected override string YearText => "Jahr";
 
-        protected override string MonthText
-        {
-            get { return "Monat"; }
-        }
+        protected override string MonthText => "Monat";
 
-        protected override string DayText
-        {
-            get { return "Tag"; }
-        }
+        protected override string DayText => "Tag";
 
-        protected override string HourText
-        {
-            get { return "Stunde"; }
-        }
+        protected override string HourText => "Stunde";
 
-        protected override string MinuteText
-        {
-            get { return "Minute"; }
-        }
+        protected override string MinuteText => "Minute";
 
-        protected override string SecondText
-        {
-            get { return "Sekunde"; }
-        }
+        protected override string SecondText => "Sekunde";
 
         protected override string Pluralize(string text, int value)
         {

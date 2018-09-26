@@ -19,9 +19,6 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Globalization;
 using DateTimeExtensions.Common;
 using DateTimeExtensions.NaturalText.CultureStrategies;
@@ -40,13 +37,10 @@ namespace DateTimeExtensions.NaturalText
         public NaturalTextCultureInfo(string name)
         {
             this.name = name;
-            this.LocateNaturalTimeStrategy = DefaultLocateNaturalTimeStrategy;
+            LocateNaturalTimeStrategy = DefaultLocateNaturalTimeStrategy;
         }
 
-        public string Name
-        {
-            get { return name; }
-        }
+        public string Name => name;
 
         public string ToNaturalText(DateDiff span, bool round)
         {
@@ -62,7 +56,7 @@ namespace DateTimeExtensions.NaturalText
 
         public Func<string, INaturalTimeStrategy> LocateNaturalTimeStrategy
         {
-            get { return locateNaturalTimeStrategy; }
+            get => locateNaturalTimeStrategy;
             set
             {
                 if (value != null)

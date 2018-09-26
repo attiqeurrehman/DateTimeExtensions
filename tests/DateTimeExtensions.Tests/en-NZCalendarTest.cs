@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NUnit.Framework;
 using DateTimeExtensions.WorkingDays;
-using DateTimeExtensions.WorkingDays.CultureStrategies;
-
+using NUnit.Framework;
 
 namespace DateTimeExtensions.Tests
 {

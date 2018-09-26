@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NUnit.Framework;
 using DateTimeExtensions.NaturalText;
+using NUnit.Framework;
 
 namespace DateTimeExtensions.Tests
 {

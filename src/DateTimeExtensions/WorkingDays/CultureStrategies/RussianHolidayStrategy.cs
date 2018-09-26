@@ -20,8 +20,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DateTimeExtensions.WorkingDays.CultureStrategies
 {
@@ -29,9 +27,9 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
     {
         public RussianHolidayStrategy()
         {
-            this.InnerHolidays.Add(GlobalHolidays.NewYear);
-            this.InnerHolidays.Add(OrtodoxChristmas);
-            this.InnerHolidays.Add(DefenderOfTheFatherland);
+            InnerHolidays.Add(GlobalHolidays.NewYear);
+            InnerHolidays.Add(OrtodoxChristmas);
+            InnerHolidays.Add(DefenderOfTheFatherland);
         }
 
         protected override IDictionary<DateTime, Holiday> BuildObservancesMap(int year)

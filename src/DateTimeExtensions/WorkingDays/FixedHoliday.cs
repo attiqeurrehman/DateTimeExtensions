@@ -55,7 +55,7 @@ namespace DateTimeExtensions.WorkingDays
 
         public override bool IsInstanceOf(DateTime date)
         {
-            var holidayDate = this.holidayResolver(date.Year);
+            var holidayDate = holidayResolver(date.Year);
             return holidayDate != null && holidayDate.Value.Date == date.Date;
         }
     }

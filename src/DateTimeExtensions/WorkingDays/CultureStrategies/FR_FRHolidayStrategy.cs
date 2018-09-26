@@ -18,10 +18,6 @@
 
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.WorkingDays.CultureStrategies
@@ -31,17 +27,17 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
     {
         public FR_FRHolidayStrategy(string region)
         {
-            this.InnerHolidays.Add(GlobalHolidays.NewYear);
-            this.InnerHolidays.Add(ChristianHolidays.EasterMonday);
-            this.InnerHolidays.Add(ChristianHolidays.Ascension);
-            this.InnerHolidays.Add(ChristianHolidays.AllSaints);
-            this.InnerHolidays.Add(ChristianHolidays.Christmas);
-            this.InnerHolidays.Add(ChristianHolidays.Assumption);
+            InnerHolidays.Add(GlobalHolidays.NewYear);
+            InnerHolidays.Add(ChristianHolidays.EasterMonday);
+            InnerHolidays.Add(ChristianHolidays.Ascension);
+            InnerHolidays.Add(ChristianHolidays.AllSaints);
+            InnerHolidays.Add(ChristianHolidays.Christmas);
+            InnerHolidays.Add(ChristianHolidays.Assumption);
 
-            this.InnerHolidays.Add(GlobalHolidays.InternationalWorkersDay);
-            this.InnerHolidays.Add(GlobalHolidays.VeteransDay);
-            this.InnerHolidays.Add(VictoryInEuropeDay);
-            this.InnerHolidays.Add(BastilleDay);
+            InnerHolidays.Add(GlobalHolidays.InternationalWorkersDay);
+            InnerHolidays.Add(GlobalHolidays.VeteransDay);
+            InnerHolidays.Add(VictoryInEuropeDay);
+            InnerHolidays.Add(BastilleDay);
 
             if (string.IsNullOrEmpty(region))
             {
@@ -50,7 +46,7 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
 
             if (region == "Alsace" || region == "Lorraine")
             {
-                this.InnerHolidays.Add(StStephensDay);
+                InnerHolidays.Add(StStephensDay);
             }
         }
 

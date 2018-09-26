@@ -20,8 +20,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DateTimeExtensions.WorkingDays
 {
@@ -98,19 +96,16 @@ namespace DateTimeExtensions.WorkingDays
 
                     return new DateTime(year, p, q + 1);
                 }
-                else
-                {
-                    //Julian Calendar 
+                //Julian Calendar 
 
-                    DivRem(year, 4, out a);
-                    DivRem(year, 7, out b);
-                    DivRem(year, 19, out c);
-                    DivRem(19*c + 15, 30, out d);
-                    DivRem(2*a + 4*b - d + 34, 7, out e);
-                    f = DivRem(d + e + 114, 31, out g);
+                DivRem(year, 4, out a);
+                DivRem(year, 7, out b);
+                DivRem(year, 19, out c);
+                DivRem(19*c + 15, 30, out d);
+                DivRem(2*a + 4*b - d + 34, 7, out e);
+                f = DivRem(d + e + 114, 31, out g);
 
-                    return new DateTime(year, f, g + 1);
-                }
+                return new DateTime(year, f, g + 1);
             }
 
             private static int DivRem(int a, int b, out int result)

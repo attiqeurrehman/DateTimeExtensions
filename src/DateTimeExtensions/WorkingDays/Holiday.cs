@@ -21,7 +21,6 @@
 using System;
 using System.Reflection;
 using System.Resources;
-using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.WorkingDays
 {
@@ -36,15 +35,15 @@ namespace DateTimeExtensions.WorkingDays
         /// <param name="name">name or resource key of the holiday</param>
         protected Holiday(string name)
         {
-            this.Name = name;
+            Name = name;
         }
 
-        private string name;
+        private string _name;
 
         public string Name
         {
-            get { return ResourceManager.GetString(name) ?? name; }
-            private set { this.name = value; }
+            get => ResourceManager.GetString(_name) ?? _name;
+            private set => _name = value;
         }
 
         public abstract DateTime? GetInstance(int year);
@@ -56,15 +55,8 @@ namespace DateTimeExtensions.WorkingDays
 
         public static ResourceManager ResourceManager
         {
-            get { return resourceManager; }
-            set
-            {
-                if (value == null)
-                {
-                    throw new ArgumentNullException("value");
-                }
-                resourceManager = value;
-            }
+            get => resourceManager;
+            set => resourceManager = value ?? throw new ArgumentNullException("value");
         }
     }
 }

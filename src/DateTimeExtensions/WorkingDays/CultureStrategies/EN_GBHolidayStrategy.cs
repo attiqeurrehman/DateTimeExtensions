@@ -19,9 +19,6 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.WorkingDays.CultureStrategies
@@ -31,15 +28,15 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
     {
         public EN_GBHolidayStrategy()
         {
-            this.InnerHolidays.Add(GlobalHolidays.NewYear);
-            this.InnerHolidays.Add(ChristianHolidays.GoodFriday);
-            this.InnerHolidays.Add(ChristianHolidays.EasterMonday);
-            this.InnerHolidays.Add(ChristianHolidays.Christmas);
+            InnerHolidays.Add(GlobalHolidays.NewYear);
+            InnerHolidays.Add(ChristianHolidays.GoodFriday);
+            InnerHolidays.Add(ChristianHolidays.EasterMonday);
+            InnerHolidays.Add(ChristianHolidays.Christmas);
 
-            this.InnerHolidays.Add(GlobalHolidays.BoxingDay);
-            this.InnerHolidays.Add(MayDayBank);
-            this.InnerHolidays.Add(SpringBank);
-            this.InnerHolidays.Add(LateSummerBank);
+            InnerHolidays.Add(GlobalHolidays.BoxingDay);
+            InnerHolidays.Add(MayDayBank);
+            InnerHolidays.Add(SpringBank);
+            InnerHolidays.Add(LateSummerBank);
         }
 
         private static Holiday boxingDay;

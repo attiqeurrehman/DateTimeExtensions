@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
+﻿// ReSharper disable once RedundantUsingDirective
+using System;
 
 namespace DateTimeExtensions.WorkingDays
 {

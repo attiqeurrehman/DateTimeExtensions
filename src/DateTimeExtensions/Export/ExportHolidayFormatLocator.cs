@@ -19,9 +19,6 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DateTimeExtensions.Export
 {
@@ -33,7 +30,7 @@ namespace DateTimeExtensions.Export
 
         public static IExportHolidaysFormat LocateByType(ExportType type)
         {
-            string strategyName = NAMESPACE + "." + type.ToString() + EXPORT_FORMAT_NAME;
+            string strategyName = NAMESPACE + "." + type + EXPORT_FORMAT_NAME;
             IExportHolidaysFormat holidayStrategy = CreateObjectInstance<IExportHolidaysFormat>(strategyName);
             return holidayStrategy;
         }

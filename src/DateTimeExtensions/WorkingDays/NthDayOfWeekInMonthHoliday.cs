@@ -20,8 +20,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DateTimeExtensions.WorkingDays
 {
@@ -29,7 +27,7 @@ namespace DateTimeExtensions.WorkingDays
     {
         FromFirst,
         FromLast
-    };
+    }
 
     public class NthDayOfWeekInMonthHoliday : Holiday
     {

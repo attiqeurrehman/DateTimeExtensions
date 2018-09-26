@@ -18,10 +18,6 @@
 
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.WorkingDays.CultureStrategies
@@ -31,19 +27,19 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
     {
         public SV_SEHolidayStrategy()
         {
-            this.InnerHolidays.Add(GlobalHolidays.NewYear);
-            this.InnerHolidays.Add(ChristianHolidays.Epiphany);
-            this.InnerHolidays.Add(ChristianHolidays.GoodFriday);
-            this.InnerHolidays.Add(ChristianHolidays.Easter);
-            this.InnerHolidays.Add(ChristianHolidays.EasterMonday);
-            this.InnerHolidays.Add(GlobalHolidays.InternationalWorkersDay);
-            this.InnerHolidays.Add(ChristianHolidays.Ascension);
-            this.InnerHolidays.Add(ChristianHolidays.Pentecost);
-            this.InnerHolidays.Add(NationalDay);
-            this.InnerHolidays.Add(GlobalHolidays.MidsummerDay);
-            this.InnerHolidays.Add(ChristianHolidays.AllSaints);
-            this.InnerHolidays.Add(ChristianHolidays.Christmas);
-            this.InnerHolidays.Add(GlobalHolidays.BoxingDay);
+            InnerHolidays.Add(GlobalHolidays.NewYear);
+            InnerHolidays.Add(ChristianHolidays.Epiphany);
+            InnerHolidays.Add(ChristianHolidays.GoodFriday);
+            InnerHolidays.Add(ChristianHolidays.Easter);
+            InnerHolidays.Add(ChristianHolidays.EasterMonday);
+            InnerHolidays.Add(GlobalHolidays.InternationalWorkersDay);
+            InnerHolidays.Add(ChristianHolidays.Ascension);
+            InnerHolidays.Add(ChristianHolidays.Pentecost);
+            InnerHolidays.Add(NationalDay);
+            InnerHolidays.Add(GlobalHolidays.MidsummerDay);
+            InnerHolidays.Add(ChristianHolidays.AllSaints);
+            InnerHolidays.Add(ChristianHolidays.Christmas);
+            InnerHolidays.Add(GlobalHolidays.BoxingDay);
         }
 
         private static Holiday nationalDay;

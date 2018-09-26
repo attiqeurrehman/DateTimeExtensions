@@ -19,9 +19,6 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DateTimeExtensions.NaturalText.CultureStrategies
 {
@@ -34,10 +31,7 @@ namespace DateTimeExtensions.NaturalText.CultureStrategies
         protected abstract string MinuteText { get; }
         protected abstract string SecondText { get; }
 
-        protected virtual string SentenceJoinerFormat
-        {
-            get { return "{0}, {1}"; }
-        }
+        protected virtual string SentenceJoinerFormat => "{0}, {1}";
 
         public virtual string ToNaturalText(DateDiff dateDiff, bool round)
         {
@@ -45,39 +39,39 @@ namespace DateTimeExtensions.NaturalText.CultureStrategies
             {
                 if (round && dateDiff.Months >= 6)
                 {
-                    return this.GetYearsText(dateDiff.Years + 1);
+                    return GetYearsText(dateDiff.Years + 1);
                 }
-                return this.GetYearsText(dateDiff.Years);
+                return GetYearsText(dateDiff.Years);
             }
             if (dateDiff.Months > 0)
             {
                 if (round && dateDiff.Days >= 15)
                 {
-                    return this.GetMonthsText(dateDiff.Months + 1);
+                    return GetMonthsText(dateDiff.Months + 1);
                 }
-                return this.GetMonthsText(dateDiff.Months);
+                return GetMonthsText(dateDiff.Months);
             }
             if (dateDiff.Days > 0)
             {
                 if (round && dateDiff.Hours >= 12)
                 {
-                    return this.GetDaysText(dateDiff.Days + 1);
+                    return GetDaysText(dateDiff.Days + 1);
                 }
-                return this.GetDaysText(dateDiff.Days);
+                return GetDaysText(dateDiff.Days);
             }
             if (!round)
             {
                 if (dateDiff.Hours > 0)
                 {
-                    return this.GetHoursText(dateDiff.Hours);
+                    return GetHoursText(dateDiff.Hours);
                 }
                 if (dateDiff.Minutes > 0)
                 {
-                    return this.GetMinutesText(dateDiff.Minutes);
+                    return GetMinutesText(dateDiff.Minutes);
                 }
                 if (dateDiff.Seconds > 0)
                 {
-                    return this.GetSecondsText(dateDiff.Seconds);
+                    return GetSecondsText(dateDiff.Seconds);
                 }
             }
             bool carrier;
@@ -86,30 +80,30 @@ namespace DateTimeExtensions.NaturalText.CultureStrategies
             {
                 if (carrier || minutes >= 30)
                 {
-                    return this.GetHoursText(dateDiff.Hours + 1);
+                    return GetHoursText(dateDiff.Hours + 1);
                 }
-                return this.GetHoursText(dateDiff.Hours);
+                return GetHoursText(dateDiff.Hours);
             }
-            var seconds = this.SixtyToQuarters(dateDiff.Seconds, out carrier);
+            var seconds = SixtyToQuarters(dateDiff.Seconds, out carrier);
             if (minutes == 0 && dateDiff.Minutes > 0)
             {
                 if (seconds >= 30 || carrier)
                 {
-                    return this.GetMinutesText(dateDiff.Minutes + 1);
+                    return GetMinutesText(dateDiff.Minutes + 1);
                 }
-                return this.GetMinutesText(dateDiff.Minutes);
+                return GetMinutesText(dateDiff.Minutes);
             }
             if (minutes == 0 && carrier)
             {
-                return this.GetMinutesText(1);
+                return GetMinutesText(1);
             }
             if (minutes > 0)
             {
-                return this.GetMinutesText(minutes);
+                return GetMinutesText(minutes);
             }
             if (seconds > 0)
             {
-                return this.GetSecondsText(seconds);
+                return GetSecondsText(seconds);
             }
             return string.Empty;
         }
@@ -119,27 +113,27 @@ namespace DateTimeExtensions.NaturalText.CultureStrategies
             string text = string.Empty;
             if (dateDiff.Years > 0)
             {
-                text = this.AddSentence(text, this.GetYearsText(dateDiff.Years));
+                text = AddSentence(text, GetYearsText(dateDiff.Years));
             }
             if (dateDiff.Months > 0)
             {
-                text = this.AddSentence(text, this.GetMonthsText(dateDiff.Months));
+                text = AddSentence(text, GetMonthsText(dateDiff.Months));
             }
             if (dateDiff.Days > 0)
             {
-                text = this.AddSentence(text, this.GetDaysText(dateDiff.Days));
+                text = AddSentence(text, GetDaysText(dateDiff.Days));
             }
             if (dateDiff.Hours > 0)
             {
-                text = this.AddSentence(text, this.GetHoursText(dateDiff.Hours));
+                text = AddSentence(text, GetHoursText(dateDiff.Hours));
             }
             if (dateDiff.Minutes > 0)
             {
-                text = this.AddSentence(text, this.GetMinutesText(dateDiff.Minutes));
+                text = AddSentence(text, GetMinutesText(dateDiff.Minutes));
             }
             if (dateDiff.Seconds > 0)
             {
-                text = this.AddSentence(text, this.GetSecondsText(dateDiff.Seconds));
+                text = AddSentence(text, GetSecondsText(dateDiff.Seconds));
             }
             return text;
         }
@@ -182,32 +176,32 @@ namespace DateTimeExtensions.NaturalText.CultureStrategies
 
         protected virtual string GetYearsText(int value)
         {
-            return string.Format("{0} {1}", value, value == 1 ? YearText : this.Pluralize(YearText, value));
+            return string.Format("{0} {1}", value, value == 1 ? YearText : Pluralize(YearText, value));
         }
 
         protected virtual string GetMonthsText(int value)
         {
-            return string.Format("{0} {1}", value, value == 1 ? MonthText : this.Pluralize(MonthText, value));
+            return string.Format("{0} {1}", value, value == 1 ? MonthText : Pluralize(MonthText, value));
         }
 
         protected virtual string GetDaysText(int value)
         {
-            return string.Format("{0} {1}", value, value == 1 ? DayText : this.Pluralize(DayText, value));
+            return string.Format("{0} {1}", value, value == 1 ? DayText : Pluralize(DayText, value));
         }
 
         protected virtual string GetHoursText(int value)
         {
-            return string.Format("{0} {1}", value, value == 1 ? HourText : this.Pluralize(HourText, value));
+            return string.Format("{0} {1}", value, value == 1 ? HourText : Pluralize(HourText, value));
         }
 
         protected virtual string GetMinutesText(int value)
         {
-            return string.Format("{0} {1}", value, value == 1 ? MinuteText : this.Pluralize(MinuteText, value));
+            return string.Format("{0} {1}", value, value == 1 ? MinuteText : Pluralize(MinuteText, value));
         }
 
         protected virtual string GetSecondsText(int value)
         {
-            return string.Format("{0} {1}", value, value == 1 ? SecondText : this.Pluralize(SecondText, value));
+            return string.Format("{0} {1}", value, value == 1 ? SecondText : Pluralize(SecondText, value));
         }
 
         protected virtual string Pluralize(string text, int value)

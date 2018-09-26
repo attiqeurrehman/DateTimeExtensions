@@ -18,10 +18,6 @@
 
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.NaturalText.CultureStrategies
@@ -29,40 +25,19 @@ namespace DateTimeExtensions.NaturalText.CultureStrategies
     [Locale("ko-KR")]
     public class KO_KRNaturalTimeStrategy : NaturalTimeStrategyBase
     {
-        protected override string SentenceJoinerFormat
-        {
-            get { return "{0} {1}"; }
-        }
+        protected override string SentenceJoinerFormat => "{0} {1}";
 
-        protected override string YearText
-        {
-            get { return "년"; }
-        }
+        protected override string YearText => "년";
 
-        protected override string MonthText
-        {
-            get { return "개월"; }
-        }
+        protected override string MonthText => "개월";
 
-        protected override string DayText
-        {
-            get { return "일"; }
-        }
+        protected override string DayText => "일";
 
-        protected override string HourText
-        {
-            get { return "시간"; }
-        }
+        protected override string HourText => "시간";
 
-        protected override string MinuteText
-        {
-            get { return "분"; }
-        }
+        protected override string MinuteText => "분";
 
-        protected override string SecondText
-        {
-            get { return "초"; }
-        }
+        protected override string SecondText => "초";
 
         protected override string Pluralize(string text, int value)
         {

@@ -18,8 +18,6 @@
 
 #endregion
 
-using System;
-
 namespace DateTimeExtensions.NaturalText
 {
     public interface INaturalTimeStrategy

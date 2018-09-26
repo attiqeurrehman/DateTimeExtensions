@@ -18,10 +18,6 @@
 
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace DateTimeExtensions.WorkingDays.RegionIdentifiers
 {
     public static class PortugalRegion

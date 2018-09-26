@@ -21,8 +21,6 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.WorkingDays.CultureStrategies
@@ -34,9 +32,9 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
 
         public AR_SAHolidayStrategy()
         {
-            this.InnerHolidays.Add(EndOfRamadan);
-            this.InnerHolidays.Add(EndOfHajj);
-            this.InnerHolidays.Add(SaudiNationalDay);
+            InnerHolidays.Add(EndOfRamadan);
+            InnerHolidays.Add(EndOfHajj);
+            InnerHolidays.Add(SaudiNationalDay);
         }
 
         protected override IDictionary<DateTime, Holiday> BuildObservancesMap(int year)

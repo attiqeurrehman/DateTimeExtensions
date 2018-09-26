@@ -18,10 +18,6 @@
 
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.WorkingDays.CultureStrategies
@@ -31,8 +27,8 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
     {
         public EN_IEHolidayStrategy()
         {
-            this.InnerHolidays.Add(GlobalHolidays.BoxingDay);
-            this.InnerHolidays.Add(BattleOfTheBoyneDay);
+            InnerHolidays.Add(GlobalHolidays.BoxingDay);
+            InnerHolidays.Add(BattleOfTheBoyneDay);
         }
 
         private static Holiday battleOfTheBoyneDay;

@@ -21,7 +21,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.WorkingDays.CultureStrategies
@@ -30,7 +29,7 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
     public class ES_ARHolidayStrategy : HolidayStrategyBase, IHolidayStrategy
     {
         private static readonly IEnumerable<Holiday> TuristicHolidays =
-            new Holiday[]
+            new[]
             {
                 GlobalHolidays.NewYear, 
                 //The day before the carnival is an holiday also but since Carnival is allways a tuesday,
@@ -45,7 +44,7 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
                 ChristianHolidays.ImaculateConception,
                 //TODO: only half day. should it be included?
                 //this.InnerHolidays.Add(ChristianHolidays.ChristmasEve);
-                ChristianHolidays.Christmas,
+                ChristianHolidays.Christmas
                 //TODO: only half day. should it be included?
                 //this.InnerHolidays.Add(GlobalHolidays.NewYearsEve);
             };
@@ -54,27 +53,27 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
         {
             foreach (var turisticHoliday in TuristicHolidays)
             {
-                this.InnerHolidays.Add(turisticHoliday);
+                InnerHolidays.Add(turisticHoliday);
             }
-            this.InnerHolidays.Add(ChristianHolidays.MaundyThursday);
-            this.InnerHolidays.Add(ChristianHolidays.GoodFriday);
-            this.InnerHolidays.Add(AnniversaryOfDeathGeneralJoseSanMartin);
-            this.InnerHolidays.Add(DayOfRespectForCulturalDiversity);
-            this.InnerHolidays.Add(DayOfNationalSovereignity);
+            InnerHolidays.Add(ChristianHolidays.MaundyThursday);
+            InnerHolidays.Add(ChristianHolidays.GoodFriday);
+            InnerHolidays.Add(AnniversaryOfDeathGeneralJoseSanMartin);
+            InnerHolidays.Add(DayOfRespectForCulturalDiversity);
+            InnerHolidays.Add(DayOfNationalSovereignity);
         }
 
         protected override IDictionary<DateTime, Holiday> BuildObservancesMap(int year)
         {
             var observancesMap = new Dictionary<DateTime, Holiday>();
-            this.BuildMoveableObservanceMap(year, DayOfRespectForCulturalDiversity, observancesMap);
-            this.BuildMoveableObservanceMap(year, DayOfNationalSovereignity, observancesMap);
+            BuildMoveableObservanceMap(year, DayOfRespectForCulturalDiversity, observancesMap);
+            BuildMoveableObservanceMap(year, DayOfNationalSovereignity, observancesMap);
             foreach (var turisticHoliday in TuristicHolidays)
             {
-                this.BuildTuristicObservanceMap(year, turisticHoliday, observancesMap);
+                BuildTuristicObservanceMap(year, turisticHoliday, observancesMap);
             }
-            this.BuildNormalObservanceMap(year, ChristianHolidays.MaundyThursday, observancesMap);
-            this.BuildNormalObservanceMap(year, ChristianHolidays.GoodFriday, observancesMap);
-            this.BuildNormalObservanceMap(year, AnniversaryOfDeathGeneralJoseSanMartin, observancesMap);
+            BuildNormalObservanceMap(year, ChristianHolidays.MaundyThursday, observancesMap);
+            BuildNormalObservanceMap(year, ChristianHolidays.GoodFriday, observancesMap);
+            BuildNormalObservanceMap(year, AnniversaryOfDeathGeneralJoseSanMartin, observancesMap);
             return observancesMap;
         }
 

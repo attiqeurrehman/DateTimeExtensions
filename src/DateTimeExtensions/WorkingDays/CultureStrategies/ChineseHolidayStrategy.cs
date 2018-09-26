@@ -31,12 +31,12 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
 
         public ChineseHolidayStrategy()
         {
-            this.InnerHolidays.Add(GlobalHolidays.NewYear);
-            this.InnerHolidays.Add(SpringFestival);
-            this.InnerHolidays.Add(GlobalHolidays.InternationalWorkersDay);
-            this.InnerHolidays.Add(DragonBoatFestival);
-            this.InnerHolidays.Add(MidAutumnFestival);
-            this.InnerHolidays.Add(NationalDay);
+            InnerHolidays.Add(GlobalHolidays.NewYear);
+            InnerHolidays.Add(SpringFestival);
+            InnerHolidays.Add(GlobalHolidays.InternationalWorkersDay);
+            InnerHolidays.Add(DragonBoatFestival);
+            InnerHolidays.Add(MidAutumnFestival);
+            InnerHolidays.Add(NationalDay);
         }
 
         private static Holiday springFestival;

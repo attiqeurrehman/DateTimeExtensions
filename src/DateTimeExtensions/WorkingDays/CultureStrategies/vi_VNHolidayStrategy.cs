@@ -27,11 +27,11 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
     {
         public ViVNHolidayStrategy()
         {
-            this.InnerHolidays.Add(HungKingsCommemorations);
-            this.InnerHolidays.Add(LiberationDay);
-            this.InnerHolidays.Add(InternationalWorkersDay);
-            this.InnerHolidays.Add(NationalDay);
-            this.InnerHolidays.Add(NewYear);
+            InnerHolidays.Add(HungKingsCommemorations);
+            InnerHolidays.Add(LiberationDay);
+            InnerHolidays.Add(InternationalWorkersDay);
+            InnerHolidays.Add(NationalDay);
+            InnerHolidays.Add(NewYear);
         }
 
         private static Holiday hungKingsCommemorations;

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.WorkingDays.CultureStrategies
@@ -15,17 +13,17 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
 
         public EN_NZHolidayStrategy()
         {
-            this.InnerHolidays.Add(GlobalHolidays.NewYear);
-            this.InnerHolidays.Add(DayAfterNewYear);
-            this.InnerHolidays.Add(WaitangiDay);
-            this.InnerHolidays.Add(ChristianHolidays.GoodFriday);
-            this.InnerHolidays.Add(ChristianHolidays.Easter);
-            this.InnerHolidays.Add(ChristianHolidays.EasterMonday);
-            this.InnerHolidays.Add(AnzacDay);
-            this.InnerHolidays.Add(QueensBirthday);
-            this.InnerHolidays.Add(LabourDay);
-            this.InnerHolidays.Add(ChristianHolidays.Christmas);
-            this.InnerHolidays.Add(GlobalHolidays.BoxingDay);
+            InnerHolidays.Add(GlobalHolidays.NewYear);
+            InnerHolidays.Add(DayAfterNewYear);
+            InnerHolidays.Add(WaitangiDay);
+            InnerHolidays.Add(ChristianHolidays.GoodFriday);
+            InnerHolidays.Add(ChristianHolidays.Easter);
+            InnerHolidays.Add(ChristianHolidays.EasterMonday);
+            InnerHolidays.Add(AnzacDay);
+            InnerHolidays.Add(QueensBirthday);
+            InnerHolidays.Add(LabourDay);
+            InnerHolidays.Add(ChristianHolidays.Christmas);
+            InnerHolidays.Add(GlobalHolidays.BoxingDay);
         }
 
         protected override IDictionary<DateTime, Holiday> BuildObservancesMap(int year)

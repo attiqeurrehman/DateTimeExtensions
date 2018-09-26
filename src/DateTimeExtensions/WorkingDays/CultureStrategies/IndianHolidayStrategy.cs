@@ -1,5 +1,5 @@
-﻿using DateTimeExtensions.Common;
-using System.Globalization;
+﻿using System.Globalization;
+using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.WorkingDays.CultureStrategies
 {
@@ -10,11 +10,11 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
 
         public IndianHolidayStrategy()
         {
-            this.InnerHolidays.Add(GlobalHolidays.NewYear);
-            this.InnerHolidays.Add(GlobalHolidays.MayDay);
-            this.InnerHolidays.Add(IndependenceDay);
-            this.InnerHolidays.Add(RepublicDay);
-            this.InnerHolidays.Add(GandhiBirthAnniversary);
+            InnerHolidays.Add(GlobalHolidays.NewYear);
+            InnerHolidays.Add(GlobalHolidays.MayDay);
+            InnerHolidays.Add(IndependenceDay);
+            InnerHolidays.Add(RepublicDay);
+            InnerHolidays.Add(GandhiBirthAnniversary);
 
         }
         private static Holiday independenceDay;

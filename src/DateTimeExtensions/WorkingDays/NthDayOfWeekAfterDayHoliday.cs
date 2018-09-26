@@ -20,8 +20,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DateTimeExtensions.WorkingDays
 {
@@ -49,13 +47,10 @@ namespace DateTimeExtensions.WorkingDays
             {
                 throw new ArgumentException("count must not be 0", "count");
             }
-            if (baseHoliday == null)
-            {
-                throw new ArgumentException("baseHoliday cannot be null", "baseHoliday");
-            }
+
             this.count = count;
             this.dayOfWeek = dayOfWeek;
-            this.baseHoliday = baseHoliday;
+            this.baseHoliday = baseHoliday ?? throw new ArgumentException("baseHoliday cannot be null", "baseHoliday");
             dayCache = new Dictionary<int, DateTime?>();
         }
 

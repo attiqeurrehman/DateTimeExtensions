@@ -19,7 +19,7 @@ namespace DateTimeExtensions.Tests
 
         public NLNaturalTimeTests()
         {
-            this.culture = new NaturalTextCultureInfo("nl-NL");
+            culture = new NaturalTextCultureInfo("nl-NL");
         }
 
         public NLNaturalTimeTests(NaturalTextCultureInfo culture)
@@ -33,7 +33,7 @@ namespace DateTimeExtensions.Tests
             var fromTime = DateTime.Now;
             var toTime = DateTime.Now.AddHours(2).AddMinutes(45);
 
-            var naturalText = fromTime.ToNaturalText(toTime, false, this.culture);
+            var naturalText = fromTime.ToNaturalText(toTime, false, culture);
 
             Assert.IsNotNull(naturalText);
             Assert.IsNotEmpty(naturalText);
@@ -46,7 +46,7 @@ namespace DateTimeExtensions.Tests
             var fromTime = DateTime.Now;
             var toTime = fromTime.AddHours(2).AddMinutes(45);
 
-            var naturalText = fromTime.ToNaturalText(toTime, true, this.culture);
+            var naturalText = fromTime.ToNaturalText(toTime, true, culture);
 
             Assert.IsNotNull(naturalText);
             Assert.IsNotEmpty(naturalText);
@@ -60,7 +60,7 @@ namespace DateTimeExtensions.Tests
             var fromTime = DateTime.Now;
             var toTime = DateTime.Now.AddHours(2).AddMinutes(30);
 
-            var naturalText = fromTime.ToExactNaturalText(toTime, this.culture);
+            var naturalText = fromTime.ToExactNaturalText(toTime, culture);
 
             Assert.IsNotNull(naturalText);
             Assert.IsNotEmpty(naturalText);
@@ -73,7 +73,7 @@ namespace DateTimeExtensions.Tests
             var fromTime = DateTime.Now;
             var toTime = fromTime.AddSeconds(6).AddMinutes(5).AddHours(4).AddDays(3).AddMonths(2).AddYears(2);
 
-            var naturalText = fromTime.ToExactNaturalText(toTime, this.culture);
+            var naturalText = fromTime.ToExactNaturalText(toTime, culture);
 
             Assert.IsNotNull(naturalText);
             Assert.IsNotEmpty(naturalText);
@@ -86,8 +86,8 @@ namespace DateTimeExtensions.Tests
             var fromTime = DateTime.Now;
             var toTime = fromTime.AddSeconds(6).AddMinutes(5).AddHours(4).AddDays(3).AddMonths(2).AddYears(2);
 
-            var naturalText = fromTime.ToExactNaturalText(toTime, this.culture);
-            var naturalTextReverse = toTime.ToExactNaturalText(fromTime, this.culture);
+            var naturalText = fromTime.ToExactNaturalText(toTime, culture);
+            var naturalTextReverse = toTime.ToExactNaturalText(fromTime, culture);
 
             Assert.IsNotNull(naturalText);
             Assert.IsNotEmpty(naturalText);
@@ -104,8 +104,8 @@ namespace DateTimeExtensions.Tests
             var toTime_plural = fromTime.AddYears(2);
             var toTime_single = fromTime.AddYears(1);
 
-            var naturalText_plural = fromTime.ToNaturalText(toTime_plural, true, this.culture);
-            var naturalText_single = fromTime.ToNaturalText(toTime_single, true, this.culture);
+            var naturalText_plural = fromTime.ToNaturalText(toTime_plural, true, culture);
+            var naturalText_single = fromTime.ToNaturalText(toTime_single, true, culture);
 
             Assert.IsNotNull(naturalText_plural);
             Assert.IsNotEmpty(naturalText_plural);
@@ -122,8 +122,8 @@ namespace DateTimeExtensions.Tests
             var toTime_plural = fromTime.AddMonths(2);
             var toTime_single = fromTime.AddMonths(1);
 
-            var naturalText_plural = fromTime.ToNaturalText(toTime_plural, true, this.culture);
-            var naturalText_single = fromTime.ToNaturalText(toTime_single, true, this.culture);
+            var naturalText_plural = fromTime.ToNaturalText(toTime_plural, true, culture);
+            var naturalText_single = fromTime.ToNaturalText(toTime_single, true, culture);
 
             Assert.IsNotNull(naturalText_plural);
             Assert.IsNotEmpty(naturalText_plural);
@@ -140,8 +140,8 @@ namespace DateTimeExtensions.Tests
             var toTime_plural = fromTime.AddDays(2).AddHours(2).AddMinutes(2).AddSeconds(2);
             var toTime_single = fromTime.AddDays(1).AddHours(1).AddMinutes(1).AddSeconds(1);
 
-            var naturalText_plural = fromTime.ToExactNaturalText(toTime_plural, this.culture);
-            var naturalText_single = fromTime.ToExactNaturalText(toTime_single, this.culture);
+            var naturalText_plural = fromTime.ToExactNaturalText(toTime_plural, culture);
+            var naturalText_single = fromTime.ToExactNaturalText(toTime_single, culture);
 
             Assert.IsNotNull(naturalText_plural);
             Assert.IsNotEmpty(naturalText_plural);

@@ -19,9 +19,6 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.WorkingDays.CultureStrategies
@@ -31,21 +28,21 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
     {
         public FI_FIHolidayStrategy()
         {
-            this.InnerHolidays.Add(GlobalHolidays.NewYear);
-            this.InnerHolidays.Add(ChristianHolidays.Epiphany);
-            this.InnerHolidays.Add(ChristianHolidays.GoodFriday);
-            this.InnerHolidays.Add(ChristianHolidays.Easter);
-            this.InnerHolidays.Add(ChristianHolidays.EasterMonday);
-            this.InnerHolidays.Add(GlobalHolidays.MayDay);
-            this.InnerHolidays.Add(ChristianHolidays.Ascension);
-            this.InnerHolidays.Add(ChristianHolidays.Pentecost);
-            this.InnerHolidays.Add(GlobalHolidays.MidsummerEve);
-            this.InnerHolidays.Add(GlobalHolidays.MidsummerDay);
-            this.InnerHolidays.Add(AllSaintsDay);
-            this.InnerHolidays.Add(IndependanceDay);
-            this.InnerHolidays.Add(ChristianHolidays.ChristmasEve);
-            this.InnerHolidays.Add(ChristianHolidays.Christmas);
-            this.InnerHolidays.Add(ChristianHolidays.StStephansDay);
+            InnerHolidays.Add(GlobalHolidays.NewYear);
+            InnerHolidays.Add(ChristianHolidays.Epiphany);
+            InnerHolidays.Add(ChristianHolidays.GoodFriday);
+            InnerHolidays.Add(ChristianHolidays.Easter);
+            InnerHolidays.Add(ChristianHolidays.EasterMonday);
+            InnerHolidays.Add(GlobalHolidays.MayDay);
+            InnerHolidays.Add(ChristianHolidays.Ascension);
+            InnerHolidays.Add(ChristianHolidays.Pentecost);
+            InnerHolidays.Add(GlobalHolidays.MidsummerEve);
+            InnerHolidays.Add(GlobalHolidays.MidsummerDay);
+            InnerHolidays.Add(AllSaintsDay);
+            InnerHolidays.Add(IndependanceDay);
+            InnerHolidays.Add(ChristianHolidays.ChristmasEve);
+            InnerHolidays.Add(ChristianHolidays.Christmas);
+            InnerHolidays.Add(ChristianHolidays.StStephansDay);
         }
 
         private static Holiday independanceDay;

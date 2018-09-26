@@ -1,10 +1,10 @@
+using System;
+using System.Linq;
+using DateTimeExtensions.WorkingDays;
+using NUnit.Framework;
+
 namespace DateTimeExtensions.Tests
 {
-    using System;
-    using System.Linq;
-    using DateTimeExtensions.WorkingDays;
-    using NUnit.Framework;
-
     [TestFixture]
     public class NLHolidaysTests
     {

@@ -22,7 +22,6 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.WorkingDays.CultureStrategies
@@ -34,20 +33,20 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
 
         public KO_KRHolidayStrategy()
         {
-            this.InnerHolidays.Add(GlobalHolidays.NewYear);
-            this.InnerHolidays.Add(Samiljeol);
-            this.InnerHolidays.Add(GlobalHolidays.InternationalWorkersDay);
-            this.InnerHolidays.Add(SeokgaTansinil);
-            this.InnerHolidays.Add(Hyeonchungil);
-            this.InnerHolidays.Add(Gwangbokjeol);
-            this.InnerHolidays.Add(Gaecheonjeol);
-            this.InnerHolidays.Add(Hangulnal);
-            this.InnerHolidays.Add(ChristianHolidays.Christmas);
+            InnerHolidays.Add(GlobalHolidays.NewYear);
+            InnerHolidays.Add(Samiljeol);
+            InnerHolidays.Add(GlobalHolidays.InternationalWorkersDay);
+            InnerHolidays.Add(SeokgaTansinil);
+            InnerHolidays.Add(Hyeonchungil);
+            InnerHolidays.Add(Gwangbokjeol);
+            InnerHolidays.Add(Gaecheonjeol);
+            InnerHolidays.Add(Hangulnal);
+            InnerHolidays.Add(ChristianHolidays.Christmas);
 
             // Add these later for substitute holiday rule application when overlapped with other holidays.
-            this.InnerHolidays.Add(Seolnal);
-            this.InnerHolidays.Add(Chuseok);
-            this.InnerHolidays.Add(Eorininal);
+            InnerHolidays.Add(Seolnal);
+            InnerHolidays.Add(Chuseok);
+            InnerHolidays.Add(Eorininal);
         }
 
         protected override IDictionary<DateTime, Holiday> BuildObservancesMap(int year)
@@ -59,7 +58,7 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
                 if (date.HasValue)
                 {
                     if (innerHoliday == Seolnal || innerHoliday == Chuseok) {
-                        DateTime[] holidays = new DateTime[] { 
+                        DateTime[] holidays = { 
                             date.Value.AddDays(-1),
                             date.Value, 
                             date.Value.AddDays(1)

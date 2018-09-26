@@ -1,6 +1,6 @@
 ﻿using System;
-using NUnit.Framework;
 using DateTimeExtensions.WorkingDays;
+using NUnit.Framework;
 
 namespace DateTimeExtensions.Tests
 {

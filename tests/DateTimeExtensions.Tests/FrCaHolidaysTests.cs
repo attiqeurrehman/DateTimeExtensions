@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using DateTimeExtensions.WorkingDays;
 using DateTimeExtensions.WorkingDays.CultureStrategies;
 using NUnit.Framework;

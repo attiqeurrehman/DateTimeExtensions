@@ -19,9 +19,6 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.WorkingDays.CultureStrategies
@@ -31,17 +28,17 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
     {
         public DA_DKHolidayStrategy()
         {
-            this.InnerHolidays.Add(GlobalHolidays.NewYear);
-            this.InnerHolidays.Add(ChristianHolidays.MaundyThursday);
-            this.InnerHolidays.Add(ChristianHolidays.GoodFriday);
-            this.InnerHolidays.Add(ChristianHolidays.Easter);
-            this.InnerHolidays.Add(ChristianHolidays.EasterMonday);
-            this.InnerHolidays.Add(GeneralPrayerDay);
-            this.InnerHolidays.Add(ChristianHolidays.Ascension);
-            this.InnerHolidays.Add(ChristianHolidays.Pentecost);
-            this.InnerHolidays.Add(ChristianHolidays.PentecostMonday);
-            this.InnerHolidays.Add(ChristianHolidays.Christmas);
-            this.InnerHolidays.Add(SecondDayOfChristmas);
+            InnerHolidays.Add(GlobalHolidays.NewYear);
+            InnerHolidays.Add(ChristianHolidays.MaundyThursday);
+            InnerHolidays.Add(ChristianHolidays.GoodFriday);
+            InnerHolidays.Add(ChristianHolidays.Easter);
+            InnerHolidays.Add(ChristianHolidays.EasterMonday);
+            InnerHolidays.Add(GeneralPrayerDay);
+            InnerHolidays.Add(ChristianHolidays.Ascension);
+            InnerHolidays.Add(ChristianHolidays.Pentecost);
+            InnerHolidays.Add(ChristianHolidays.PentecostMonday);
+            InnerHolidays.Add(ChristianHolidays.Christmas);
+            InnerHolidays.Add(SecondDayOfChristmas);
         }
 
         private static Holiday secondDayOfChristmas;

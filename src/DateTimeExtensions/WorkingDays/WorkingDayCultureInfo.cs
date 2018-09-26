@@ -20,8 +20,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Globalization;
 using DateTimeExtensions.Common;
 using DateTimeExtensions.WorkingDays.CultureStrategies;
@@ -43,8 +41,8 @@ namespace DateTimeExtensions.WorkingDays
         {
             this.name = name;
             this.region = region;
-            this.LocateWorkingDayOfWeekStrategy = DefaultLocateWorkingDayOfWeekStrategy;
-            this.LocateHolidayStrategy = DefaultLocateHolidayStrategy;
+            LocateWorkingDayOfWeekStrategy = DefaultLocateWorkingDayOfWeekStrategy;
+            LocateHolidayStrategy = DefaultLocateHolidayStrategy;
         }
 
         public bool IsHoliday(DateTime date)
@@ -54,7 +52,7 @@ namespace DateTimeExtensions.WorkingDays
 
         public bool IsWorkingDay(DateTime date)
         {
-            if (!this.workingDayOfWeekStrategy.IsWorkingDay(date.DayOfWeek))
+            if (!workingDayOfWeekStrategy.IsWorkingDay(date.DayOfWeek))
             {
                 return false;
             }
@@ -63,29 +61,23 @@ namespace DateTimeExtensions.WorkingDays
 
         public bool IsWorkingDay(DayOfWeek dayOfWeek)
         {
-            return this.workingDayOfWeekStrategy.IsWorkingDay(dayOfWeek);
+            return workingDayOfWeekStrategy.IsWorkingDay(dayOfWeek);
         }
 
-        public IEnumerable<Holiday> Holidays
-        {
-            get { return this.holidayStrategy.Holidays; }
-        }
+        public IEnumerable<Holiday> Holidays => holidayStrategy.Holidays;
 
         public IEnumerable<Holiday> GetHolidaysOfYear(int year)
         {
-            return this.holidayStrategy.GetHolidaysOfYear(year);
+            return holidayStrategy.GetHolidaysOfYear(year);
         }
 
-        public string Name
-        {
-            get { return name; }
-        }
+        public string Name => name;
 
         private Func<string, string, IWorkingDayOfWeekStrategy> locateWorkingDayOfWeekStrategy;
 
         public Func<string, string, IWorkingDayOfWeekStrategy> LocateWorkingDayOfWeekStrategy
         {
-            get { return locateWorkingDayOfWeekStrategy; }
+            get => locateWorkingDayOfWeekStrategy;
             set
             {
                 if (value != null)
@@ -104,7 +96,7 @@ namespace DateTimeExtensions.WorkingDays
 
         public Func<string, string, IHolidayStrategy> LocateHolidayStrategy
         {
-            get { return locateHolidayWeekStrategy; }
+            get => locateHolidayWeekStrategy;
             set
             {
                 if (value != null)

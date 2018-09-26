@@ -1,15 +1,8 @@
-﻿using System;
-using System.Linq;
-using Nuke.Common;
-using Nuke.Common.Git;
-using Nuke.Common.Tools.GitVersion;
+﻿using Nuke.Common;
+using Nuke.Common.BuildServers;
+using Nuke.Common.Tools.DotNet;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.IO.FileSystemTasks;
-using static Nuke.Common.IO.PathConstruction;
-using static Nuke.Common.EnvironmentInfo;
-using System.IO;
-using Nuke.Common.Tools.DotNet;
-using Nuke.Common.BuildServers;
 
 class Build : NukeBuild
 {

@@ -19,9 +19,6 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Globalization;
 
 namespace DateTimeExtensions.WorkingDays
@@ -35,9 +32,9 @@ namespace DateTimeExtensions.WorkingDays
 
         public DayInYear(int month, int day, Calendar calendar)
         {
-            this.Month = month;
-            this.Day = day;
-            this.Calendar = calendar;
+            Month = month;
+            Day = day;
+            Calendar = calendar;
         }
 
         public int Day { get; private set; }

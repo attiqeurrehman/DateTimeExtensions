@@ -20,8 +20,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.WorkingDays.CultureStrategies
@@ -31,17 +29,17 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
     {
         public EN_USHolidayStrategy()
         {
-            this.InnerHolidays.Add(GlobalHolidays.NewYear);
-            this.InnerHolidays.Add(ChristianHolidays.Christmas);
-            this.InnerHolidays.Add(NewYearsEve);
-            this.InnerHolidays.Add(IndependenceDay);
-            this.InnerHolidays.Add(GlobalHolidays.VeteransDay);
-            this.InnerHolidays.Add(MartinLutherKing);
-            this.InnerHolidays.Add(WashingtonsBirthday);
-            this.InnerHolidays.Add(MemorialDay);
-            this.InnerHolidays.Add(LaborDay);
-            this.InnerHolidays.Add(ColumbusDay);
-            this.InnerHolidays.Add(ThanksgivingDay);
+            InnerHolidays.Add(GlobalHolidays.NewYear);
+            InnerHolidays.Add(ChristianHolidays.Christmas);
+            InnerHolidays.Add(NewYearsEve);
+            InnerHolidays.Add(IndependenceDay);
+            InnerHolidays.Add(GlobalHolidays.VeteransDay);
+            InnerHolidays.Add(MartinLutherKing);
+            InnerHolidays.Add(WashingtonsBirthday);
+            InnerHolidays.Add(MemorialDay);
+            InnerHolidays.Add(LaborDay);
+            InnerHolidays.Add(ColumbusDay);
+            InnerHolidays.Add(ThanksgivingDay);
         }
 
         protected override IDictionary<DateTime, Holiday> BuildObservancesMap(int year)

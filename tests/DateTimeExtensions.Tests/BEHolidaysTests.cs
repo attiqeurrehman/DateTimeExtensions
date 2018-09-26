@@ -1,9 +1,7 @@
-﻿using DateTimeExtensions.WorkingDays;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Text;
+using DateTimeExtensions.WorkingDays;
+using NUnit.Framework;
 
 namespace DateTimeExtensions.Tests
 {

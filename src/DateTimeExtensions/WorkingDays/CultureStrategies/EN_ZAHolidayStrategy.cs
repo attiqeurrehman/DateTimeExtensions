@@ -20,8 +20,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DateTimeExtensions.Common;
 
 namespace DateTimeExtensions.WorkingDays.CultureStrategies
@@ -31,18 +29,18 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
     {
         public EN_ZAHolidayStrategy()
         {
-            this.InnerHolidays.Add(GlobalHolidays.NewYear);
-            this.InnerHolidays.Add(HumanRightsDay);
-            this.InnerHolidays.Add(ChristianHolidays.GoodFriday);
-            this.InnerHolidays.Add(FamilyDay);
-            this.InnerHolidays.Add(FreedomDay);
-            this.InnerHolidays.Add(GlobalHolidays.InternationalWorkersDay);
-            this.InnerHolidays.Add(YouthDay);
-            this.InnerHolidays.Add(NationalWomansDay);
-            this.InnerHolidays.Add(HeritageDay);
-            this.InnerHolidays.Add(DayOfReconciliation);
-            this.InnerHolidays.Add(ChristianHolidays.Christmas);
-            this.InnerHolidays.Add(DayOfGoodwill);
+            InnerHolidays.Add(GlobalHolidays.NewYear);
+            InnerHolidays.Add(HumanRightsDay);
+            InnerHolidays.Add(ChristianHolidays.GoodFriday);
+            InnerHolidays.Add(FamilyDay);
+            InnerHolidays.Add(FreedomDay);
+            InnerHolidays.Add(GlobalHolidays.InternationalWorkersDay);
+            InnerHolidays.Add(YouthDay);
+            InnerHolidays.Add(NationalWomansDay);
+            InnerHolidays.Add(HeritageDay);
+            InnerHolidays.Add(DayOfReconciliation);
+            InnerHolidays.Add(ChristianHolidays.Christmas);
+            InnerHolidays.Add(DayOfGoodwill);
         }
 
         protected override IDictionary<DateTime, Holiday> BuildObservancesMap(int year)

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using DateTimeExtensions;
-using NUnit.Framework;
 using DateTimeExtensions.WorkingDays;
 using DateTimeExtensions.WorkingDays.CultureStrategies;
 using Moq;
+using NUnit.Framework;
 
 namespace DateTimeExtensions.Tests
 {
@@ -33,7 +29,7 @@ namespace DateTimeExtensions.Tests
             var mockDayOfWeekStartegy = new Mock<IWorkingDayOfWeekStrategy>();
             mockDayOfWeekStartegy.Setup(x => x.IsWorkingDay(It.IsAny<DayOfWeek>())).Returns(true);
 
-            WorkingDayCultureInfo workingdayCultureInfo = new WorkingDayCultureInfo()
+            WorkingDayCultureInfo workingdayCultureInfo = new WorkingDayCultureInfo
             {
                 LocateHolidayStrategy = (n, r) => { return mockHolidayStrategy.Object; },
                 LocateWorkingDayOfWeekStrategy = (n, r) => { return mockDayOfWeekStartegy.Object; }
@@ -52,7 +48,7 @@ namespace DateTimeExtensions.Tests
             var mockDayOfWeekStartegy = new Mock<IWorkingDayOfWeekStrategy>();
             mockDayOfWeekStartegy.Setup(x => x.IsWorkingDay(It.IsAny<DayOfWeek>())).Returns(false);
 
-            WorkingDayCultureInfo workingdayCultureInfo = new WorkingDayCultureInfo()
+            WorkingDayCultureInfo workingdayCultureInfo = new WorkingDayCultureInfo
             {
                 LocateWorkingDayOfWeekStrategy = (n, r) => { return mockDayOfWeekStartegy.Object; }
             };

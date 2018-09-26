@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NUnit.Framework;
 using DateTimeExtensions.WorkingDays;
 using DateTimeExtensions.WorkingDays.CultureStrategies;
+using NUnit.Framework;
 
 namespace DateTimeExtensions.Tests
 {
@@ -32,7 +29,7 @@ namespace DateTimeExtensions.Tests
             DateTime day = new DateTime(2015, 2, 18);
             do
             {
-                Assert.IsFalse(dateTimeCulture.IsWorkingDay(day), day.ToString() + " shouldn't be a working day");
+                Assert.IsFalse(dateTimeCulture.IsWorkingDay(day), day + " shouldn't be a working day");
                 day = day.AddDays(1);
             } while (day <= new DateTime(2015, 2, 20));
 
@@ -40,7 +37,7 @@ namespace DateTimeExtensions.Tests
             day = new DateTime(2016, 2, 7);
             do
             {
-                Assert.IsFalse(dateTimeCulture.IsWorkingDay(day), day.ToString() + " shouldn't be a working day");
+                Assert.IsFalse(dateTimeCulture.IsWorkingDay(day), day + " shouldn't be a working day");
                 day = day.AddDays(1);
             } while (day <= new DateTime(2015, 2, 10));
 
@@ -48,7 +45,7 @@ namespace DateTimeExtensions.Tests
             day = new DateTime(2015, 9, 26);
             do
             {
-                Assert.IsFalse(dateTimeCulture.IsWorkingDay(day), day.ToString() + " shouldn't be a working day");
+                Assert.IsFalse(dateTimeCulture.IsWorkingDay(day), day + " shouldn't be a working day");
                 day = day.AddDays(1);
             } while (day <= new DateTime(2015, 9, 29));
         }

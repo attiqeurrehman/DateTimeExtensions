@@ -33,16 +33,16 @@ namespace DateTimeExtensions.WorkingDays.CultureStrategies
             // holidays that are observed in at least half of Australian states and territories
             // according to https://en.wikipedia.org/wiki/Public_holidays_in_Australia
 
-            this.InnerHolidays.Add(GlobalHolidays.NewYear);
-            this.InnerHolidays.Add(AustraliaDay);
-            this.InnerHolidays.Add(ChristianHolidays.GoodFriday);
-            this.InnerHolidays.Add(ChristianHolidays.EasterSaturday);
-            this.InnerHolidays.Add(ChristianHolidays.EasterMonday);
-            this.InnerHolidays.Add(AnzacDay);
-            this.InnerHolidays.Add(QueensBirthday);
-            this.InnerHolidays.Add(LabourDay);
-            this.InnerHolidays.Add(ChristianHolidays.Christmas);
-            this.InnerHolidays.Add(GlobalHolidays.BoxingDay);
+            InnerHolidays.Add(GlobalHolidays.NewYear);
+            InnerHolidays.Add(AustraliaDay);
+            InnerHolidays.Add(ChristianHolidays.GoodFriday);
+            InnerHolidays.Add(ChristianHolidays.EasterSaturday);
+            InnerHolidays.Add(ChristianHolidays.EasterMonday);
+            InnerHolidays.Add(AnzacDay);
+            InnerHolidays.Add(QueensBirthday);
+            InnerHolidays.Add(LabourDay);
+            InnerHolidays.Add(ChristianHolidays.Christmas);
+            InnerHolidays.Add(GlobalHolidays.BoxingDay);
         }
 
         protected override IDictionary<DateTime, Holiday> BuildObservancesMap(int year)

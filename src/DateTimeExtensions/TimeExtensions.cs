@@ -19,9 +19,6 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DateTimeExtensions.TimeOfDay;
 
 namespace DateTimeExtensions
@@ -56,15 +53,13 @@ namespace DateTimeExtensions
                 }
                 return false;
             }
-            else
+
+            //currentTime should be between end time time and start time
+            if (currentTime.CompareTo(startTime) >= 0 || currentTime.CompareTo(endTime) <= 0)
             {
-                //currentTime should be between end time time and start time
-                if (currentTime.CompareTo(startTime) >= 0 || currentTime.CompareTo(endTime) <= 0)
-                {
-                    return true;
-                }
-                return false;
+                return true;
             }
+            return false;
         }
 
         public static bool IsBefore(this DateTime dateTime, Time time)
